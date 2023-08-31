@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Venda - ERP</title>
+</head>
+<body>
+    <form method="post">
+{% csrf_token %}
+
+{{form}}
+<button type="submit">Cadastrar</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lista de Produtos - ERP</title>
+  </head>
+  <body>
+    <h1>Lista de Produtos Cdastrados</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <td>ID</td>
+          <td>Imagem do Produto</td>
+          <td>Nome</td>
+          <td>Descrição</td>
+          <td>Preço</td>
+          <td>Ações</td>
+        </tr>
+      </thead>
+      <tbody>
+        {% for produto in produtos %}
+        <tr>
+          <td>{{produto.id}}</td>
+          <td>
+            <img src="{{produto.imagem.url}}" alt="{{produto.nome}}" width="100px">
+          </td>
+          <td>{{produto.nom}}e</td>
+          <td>{{produto.id}}</td>
+          <td>{{produto.preco}}</td>
+          <td>
+              <a href="{% url 'erp:atualiza_produto' pk=produto.id %}">Atualizar</a>
+          <td>
+            <td>
+              <a href="{% url 'erp:deleta_produto' pk=produto.id%}">Deletar</a>
+            </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </body>
+</html>

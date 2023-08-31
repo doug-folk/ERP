@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detalhes do Produtos - ERP</title>
+  </head>
+  <body>
+    
+    {% if produto%}
+    <h1>Detalhes do Produtos</h1>
+    <img src="{{produto.imagem.url}}" alt="{{produto.nome}}" width="100px" />
+    <ul>
+        <li>Nome: {{produto.nome}}</li>
+        <li>Descrição: {{produto.descricao}}</li>
+        <li>Preço: {{produto.preco}}</li>
+    </ul>
+    {%else%}
+    <h1>Produto com este ID não encontrado</h1>
+{%endif%}
+  </body>
+</html>
